@@ -6,6 +6,7 @@ const connectDB = async () => {
     const connectionInstance = await mongoose.connect(
       `${process.env.MONGODB_URL}/${DB_NAME}`
     );
+    // here, we are consoling the mongodb is connect or not 
     console.log(
       `\n MongoDB connected !! DB HOST: ${connectionInstance.connection.host}`
     );
@@ -13,6 +14,8 @@ const connectDB = async () => {
     console.log(" MONGODB connection error ", error);
     process.exit(1);
   }
+     // here, if mongodb is not connect, then we are showing the error  message
+
 };
 
 export default connectDB;

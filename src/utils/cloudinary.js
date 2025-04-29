@@ -1,6 +1,4 @@
 import { v2 as cloudinary } from "cloudinary";
-import { log } from "console";
-import exp from "constants";
 import fs from "fs";
 
 cloudinary.config({
@@ -22,7 +20,7 @@ try {
   fs.unlinkSync(localFilePath)
   return response;
 } catch (error) {
-  console.log(error);
+  console.error(error);
   fs.unlinkSync(localFilePath); //remove the locally saved temporary file as the upload operation got failed
   return null;
   }
